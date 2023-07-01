@@ -1,4 +1,13 @@
 
+# Day 1 :
+## (DOM ,  data types &values ,operator) 
+
+## lesson summary 
+* ##### The HTML DOM is a standard object model and programming interface for HTML. It defines The HTML elements as objects
+* In JavaScript there are 5 different data types that can contain values: String,Number,Boolean,Object,Function
+* operator is a special symbol used to perform operations on operands (values and variables)
+
+
 ## first challenge in freecodecamp 
 -  Compound Assignment With Augmented Multiplication 
  ``` 
