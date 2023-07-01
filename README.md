@@ -20,6 +20,8 @@ In this challenge, i will enhance  JavaScript skills and knowledge. Each day, an
 2. Solve all the JavaScript coding challenges that will be provided by the GSG team
 3. Summarize my daily learning and document my  challenge solutions on a separate readme page 
 4. Repeat the process for the next 20 days
+
  
-
-
+## Folder Structure 
+- [**Day 1**](https://github.com/jafar-sweity/learning_sprints/blob/main/day1.md)
+- [**Day 2**](https://github.com/jafar-sweity/learning_sprints/blob/main/day2.md)
