@@ -20,5 +20,5 @@ A brief description of what this project does and who it's for
 - &#8593; &#8593;  : JavaScript modules are a way to organize and structure code. They allow developers to break their code into smaller, reusable pieces. You can think about them as smaller pieces of code that you can import and export between different parts of an application.
  
 ## Build a Rick & Morty characters list	 project : 
- [Rick & Morty project](https://github.com/jafar-sweity/learning_sprints)
+ [Rick & Morty project](https://github.com/jafar-sweity/learning_sprints/tree/main/Rick%20Morty%20characters%20list)
 
