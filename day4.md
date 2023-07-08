@@ -27,7 +27,7 @@ checkSign(10);
 ## seconde challenge in freecodecamp
 - ( Golf Code )
 - the code to solve the problem : 
-```
+``` javascript
 const names = ["Hole-in-one!", "Eagle", "Birdie", "Par", "Bogey", "Double Bogey", "Go Home!"];
 function golfScore(par, strokes) {
  if (strokes ==1 )
@@ -61,11 +61,11 @@ else if (strokes>=par+3)
   return "Change Me";
 }
 golfScore(5, 4);
-```
+``` 
 ## third challenge in freecodecamp
 - ( Use the map Method to Extract Data from an Array	)
 - the code to solve the problem : 
-``` 
+``` javascript
 const watchList = [.......
 ];
 const ratings =watchList.map(s=>({title:s['Title'],rating: s["imdbRating"]})) ;
@@ -75,7 +75,7 @@ console.log(JSON.stringify(ratings));
 ## fourth challenge in freecodecamp
 -  ( Use the filter Method to Extract Data from an Array )
 -  the code to solve the problem : 
-```
+``` javascript
 const watchList = [........
 ];
 const filteredList = watchList.filter (s=>Number(s['imdbRating'])>8).map (s=>({title : s['Title'],rating : s['imdbRating']}));
