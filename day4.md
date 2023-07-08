@@ -15,7 +15,7 @@
 ## first challenge in freecodecamp 
 -  ( Use Multiple Conditional (Ternary) Operators )
 - the code to solve the problem : 
- ``` 
+ ``` javascript
  function checkSign(num) {
  return num>0 ?'positive':num<0?'negative':'zero';
 }
