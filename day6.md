@@ -40,7 +40,7 @@ urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone");
 ## Third challenge in freecodecamp
 - ( Exercises for functions and callbacks '**1**' ) 
 - the code to solve the problem :
-```
+```javascript
 async function mapAsync(arr ,callBack) {
    cosnt newArr= await arr.map(callBack(s));
    return newArr;
@@ -50,7 +50,7 @@ async function mapAsync(arr ,callBack) {
 - ( Exercises for functions and callbacks '**2**' ) 
 - the code to solve the problem :
 
-```
+```javascript
 function sumRange(lower, upper) {
   
   if (lower > upper) return 0;
