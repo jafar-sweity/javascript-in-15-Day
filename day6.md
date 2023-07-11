@@ -41,10 +41,19 @@ urlSlug("A Mind Needs Books Like A Sword Needs A Whetstone");
 - ( Exercises for functions and callbacks '**1**' ) 
 - the code to solve the problem :
 ```javascript
-async function mapAsync(arr ,callBack) {
-   cosnt newArr= await arr.map(callBack(s));
-   return newArr;
-} 
+function mapAsync(arrr, callback) {
+  return new Promise((res, rej) => {
+    if ( arrr?.length > 0) {
+      res(arrr.map(callback));
+    } else rej(Error("Error"));
+  });
+}
+const fun = function c(s) {
+  return s + 1;
+};
+const newfunc = mapAsync([1, 2, 3, 4], fun);
+
+console.log(newfunc);
 ```
 ## Fourth challenge in freecodecamp : 
 - ( Exercises for functions and callbacks '**2**' ) 
