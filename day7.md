@@ -47,7 +47,7 @@ function calculateAverage(nums: number[]) {
 ## Third challenge 
 - ( Write a closure named powerOf that takes a base number base and returns a function. The returned function, when invoked with an exponent exp, should calculate and return the result of base raised to the power of exp. ) 
 - the code to solve the problem :
-```
+```javascript
 function powerOf(base) {
   function exponent(exp) {
     return Math.pow(base, exp);
@@ -60,7 +60,7 @@ function powerOf(base) {
 - ( Write a closure named compose that takes multiple functions as arguments and returns a new function. The returned function should apply the provided functions in reverse order, passing the result of each function as an argument to the next function.) 
 - the code to solve the problem :
 
-```
+```javascript
 function compose(...func) {
   return (input) => {
     let res = input;
