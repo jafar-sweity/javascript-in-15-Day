@@ -53,7 +53,7 @@ async function mapAsync(arr ,callBack) {
 ```
 function sumRange(lower, upper) {
   
-  if (lower == upper) return;
+  if (lower > upper) return 0;
   return lower+sumRange(lower+1,upper);
 }
 ```
