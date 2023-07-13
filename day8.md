@@ -44,17 +44,61 @@
 
 
 ## First challenge   :
-- (Write a closure named createCounter that takes an initial value start and returns a function. The returned function, when invoked, should increment the counter by 1 and return the updated value ) 
+- (ou are given a function executeInSequenceWithCBs and some code. The task is to modify the executeInSequenceWithCBs function so that it runs and executes all the tasks inside the asyncTasks array.
+
+The function should return an array of messages obtained from each task's execution.
+
+You are only allowed to change the executeInSequenceWithCBs function or add new functions/code. You cannot modify the tasks' functions. ) 
 - the code to solve the problem : 
 ```javascript
-function createCounter(start: number) {
-  let counter = start;
-  function incrementCounter() {
-    counter++;
-    return counter;
-  }
-  return incrementCounter;
-}
+const task1 = (cb) =>
+  setTimeout(() => {
+    const message = "Task 1 has executed successfully!";
+    cb(message);
+  }, 3000);
+
+const task2 = (cb) =>
+  setTimeout(() => {
+    const message = "Task 2 has executed successfully!";
+    cb(message);
+  }, 0);
+
+const task3 = (cb) =>
+  setTimeout(() => {
+    const message = "Task 3 has executed successfully!";
+    cb(message);
+  }, 1000);
+
+const task4 = (cb) =>
+  setTimeout(() => {
+    const message = "Task 4 has executed successfully!";
+    cb(message);
+  }, 2000);
+
+const task5 = (cb) =>
+  setTimeout(() => {
+    const message = "Task 5 has executed successfully!";
+    cb(message);
+  }, 4000);
+
+const asyncTasks = [task1, task2, task3, task4, task5];
+
+const executeInSequenceWithCBs = async (tasks, callback) => {
+  const messages = [];
+
+  const myPromise = (task) =>
+    new Promise((res, rej) => {
+      task(res);
+    });
+  await Promise.all(
+    tasks.map((s) => myPromise(s).then((data) => messages.push(data)))
+  );
+  
+  return messages;
+};
+
+const messageArr = await executeInSequenceWithCBs(asyncTasks);
+console.log(messageArr);
 ```
 ## Seconde challenge 
 - ( Write a closure named calculateAverage that takes an array of numbers, nums, and returns a function. The returned function, when invoked, should calculate and return the average of the numbers in the array ) 
