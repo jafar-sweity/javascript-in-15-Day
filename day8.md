@@ -151,16 +151,8 @@ console.log(JSON.stringify(finalResult, null, 2));
 
 ```
 ## Third challenge 
-- (Question 3:
-You are given a function called executeInSequenceWithPromises, which takes an array of APIs (represented by objects).
-
-Your task is to write code that fetches the data of each API sequentially (one after the other) using promises.
-
-In Sequence means that the api which executes first, returns its value first.
-
-The output of the executeInSequenceWithPromises function should be an array containing the results of each API's execution.
-
-Each result should be an object with three keys: apiName, apiUrl, and apiData.) 
+- (Question 3: You are given a function called executeInSequenceWithPromises, which takes an array of APIs (represented by objects). Your task is to write code that fetches the data of each API sequentially (one after the other) using promises. In Sequence means that the api which executes first, returns its value first
+The output of the executeInSequenceWithPromises function should be an array containing the results of each API's execution Each result should be an object with three keys: apiName, apiUrl, and apiData.) 
 - the code to solve the problem :
 ```javascript
 const apis = [
