@@ -101,41 +101,56 @@ const messageArr = await executeInSequenceWithCBs(asyncTasks);
 console.log(messageArr);
 ```
 ## Seconde challenge 
-- ( Write a closure named calculateAverage that takes an array of numbers, nums, and returns a function. The returned function, when invoked, should calculate and return the average of the numbers in the array ) 
+- (Question 2:
+You are given a function called executeInParallelWithPromises, which takes an array of APIs (represented by objects).
+
+Your task is to write code that fetches the data of each API in parallel using promises. In Parallel means that the api which resolves first, returns its value first, regardless of the execution order.
+
+The output of the executeInParallelWithPromises function should be an array containing the results of each API's execution.
+
+Each result should be an object with three keys: apiName, apiUrl, and apiData.. ) 
 - the code to solve the problem :
 ```javascript
-function calculateAverage(nums: number[]) {
-  let avg = 0;
-  function calc() {
-    return (avg = nums.reduce((a, b) => a + b) / nums.length);
-  }
-  return calc;
-}
+const apis = [
+  {
+    apiName: "products",
+    apiUrl: "https://dummyjson.com/products",
+  },
+  {
+    apiName: "users",
+    apiUrl: "https://dummyjson.com/users",
+  },
+  {
+    apiName: "posts",
+    apiUrl: "https://dummyjson.com/posts",
+  },
+  {
+    apiName: "comments",
+    apiUrl: "https://dummyjson.com/comments",
+  },
+];
+
+const executeInParallelWithPromises = async (apis) => {
+  const result = [];
+
+  await apis.map(async (i) => {
+    let ob = {};
+    ob.apiName = i.apiName;
+    ob.apiUrl = i.apiUrl;
+    let res = await fetch(i.apiUrl);
+    const data = await res.json();
+    ob.apiData = data[i.apiName];
+    console.log(ob);
+  });
+};
+await executeInParallelWithPromises(apis);
+
 ```
 ## Third challenge 
-- ( Write a closure named powerOf that takes a base number base and returns a function. The returned function, when invoked with an exponent exp, should calculate and return the result of base raised to the power of exp. ) 
+- (-) 
 - the code to solve the problem :
-```
-function powerOf(base) {
-  function exponent(exp) {
-    return Math.pow(base, exp);
-  }
-  return exponent;
-}
+```javascript
+
 
 ```
-## Fourth challenge  : 
-- ( Write a closure named compose that takes multiple functions as arguments and returns a new function. The returned function should apply the provided functions in reverse order, passing the result of each function as an argument to the next function.) 
-- the code to solve the problem :
 
-```
-function compose(...func) {
-  return (input) => {
-    let res = input;
-    for (const fn of func.reverse()) {
-      res = fn(res);
-    }
-    return res;
-  };
-}
-```
