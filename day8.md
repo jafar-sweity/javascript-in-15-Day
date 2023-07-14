@@ -174,41 +174,24 @@ const apis = [
   },
 ];
 
-// const executeInParallelWithPromises = async (apis) => {
-//   const result = Promise.all(
-//     apis.map(async (i) => {
-//       let ob = {};
-//       ob.apiName = i.apiName;
-//       ob.apiUrl = i.apiUrl;
-//       let res = await fetch(i.apiUrl);
-//       const data = await res.json();
-//       ob.apiData = data[i.apiName];
-//       return ob;
-//     })
-//   );
-//   return result;
-// };
-// const finalResult = await executeInParallelWithPromises(apis);
-// // console.log(finalResult);
-// console.log(JSON.stringify(finalResult, null, 2));
+
 
 const executeInParallelWithPromises = async (apis) => {
   const result = [];
 
-  for (let i of apis) {
+  for (let api of apis) {
     let ob = {};
-    ob.apiName = i.apiName;
-    ob.apiUrl = i.apiUrl;
+    ob.apiName = api.apiName;
+    ob.apiUrl = api.apiUrl;
 
-    const response = await fetch(i.apiUrl);
+    const response = await fetch(api.apiUrl);
     const data = await response.json();
-    ob.apiData = data[i.apiName];
+    ob.apiData = data[api.apiName];
     result.push(ob);
   }
   return result;
 };
 const finalResult = await executeInParallelWithPromises(apis);
-// console.log(finalResult);
 console.log(JSON.stringify(finalResult, null, 2));
 
 
