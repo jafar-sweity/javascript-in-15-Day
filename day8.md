@@ -151,9 +151,73 @@ console.log(JSON.stringify(finalResult, null, 2));
 
 ```
 ## Third challenge 
-- (-) 
+- (Question 3:
+You are given a function called executeInSequenceWithPromises, which takes an array of APIs (represented by objects).
+
+Your task is to write code that fetches the data of each API sequentially (one after the other) using promises.
+
+In Sequence means that the api which executes first, returns its value first.
+
+The output of the executeInSequenceWithPromises function should be an array containing the results of each API's execution.
+
+Each result should be an object with three keys: apiName, apiUrl, and apiData.) 
 - the code to solve the problem :
 ```javascript
+const apis = [
+  {
+    apiName: "products",
+    apiUrl: "https://dummyjson.com/products",
+  },
+  {
+    apiName: "users",
+    apiUrl: "https://dummyjson.com/users",
+  },
+  {
+    apiName: "posts",
+    apiUrl: "https://dummyjson.com/posts",
+  },
+  {
+    apiName: "comments",
+    apiUrl: "https://dummyjson.com/comments",
+  },
+];
+
+// const executeInParallelWithPromises = async (apis) => {
+//   const result = Promise.all(
+//     apis.map(async (i) => {
+//       let ob = {};
+//       ob.apiName = i.apiName;
+//       ob.apiUrl = i.apiUrl;
+//       let res = await fetch(i.apiUrl);
+//       const data = await res.json();
+//       ob.apiData = data[i.apiName];
+//       return ob;
+//     })
+//   );
+//   return result;
+// };
+// const finalResult = await executeInParallelWithPromises(apis);
+// // console.log(finalResult);
+// console.log(JSON.stringify(finalResult, null, 2));
+
+const executeInParallelWithPromises = async (apis) => {
+  const result = [];
+
+  for (let i of apis) {
+    let ob = {};
+    ob.apiName = i.apiName;
+    ob.apiUrl = i.apiUrl;
+
+    const response = await fetch(i.apiUrl);
+    const data = await response.json();
+    ob.apiData = data[i.apiName];
+    result.push(ob);
+  }
+  return result;
+};
+const finalResult = await executeInParallelWithPromises(apis);
+// console.log(finalResult);
+console.log(JSON.stringify(finalResult, null, 2));
 
 
 ```
