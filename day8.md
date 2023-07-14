@@ -131,19 +131,23 @@ const apis = [
 ];
 
 const executeInParallelWithPromises = async (apis) => {
-  const result = [];
-
-  await apis.map(async (i) => {
-    let ob = {};
-    ob.apiName = i.apiName;
-    ob.apiUrl = i.apiUrl;
-    let res = await fetch(i.apiUrl);
-    const data = await res.json();
-    ob.apiData = data[i.apiName];
-    console.log(ob);
-  });
+  const result = Promise.all(
+    apis.map(async (i) => {
+      let ob = {};
+      ob.apiName = i.apiName;
+      ob.apiUrl = i.apiUrl;
+      let res = await fetch(i.apiUrl);
+      const data = await res.json();
+      ob.apiData = data[i.apiName];
+      return ob;
+    })
+  );
+  return result;
 };
-await executeInParallelWithPromises(apis);
+const finalResult = await executeInParallelWithPromises(apis);
+// console.log(finalResult);
+console.log(JSON.stringify(finalResult, null, 2));
+
 
 ```
 ## Third challenge 
