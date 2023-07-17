@@ -51,3 +51,56 @@ const checkNaN = (value) => {
 };
 
 ```
+### Question 3: 
+- `Write a function called isEmptyValue that checks if a given input is an empty value (undefined, null, or empty string).`
+- solution : 
+``` javascript 
+function isEmptyValue(value) {
+  return value === "" || value === undefined || value === null;
+}
+
+
+```
+### Question 4: 
+- `Write a function called compareObjects that takes 2 arguments of type "object" and compares them. If both arguments are equal, return true. If not, return false.
+
+If either argument is not of type "object", the function should return an array of the arguments.`
+- solution : 
+``` javascript 
+function compareObjects(input1, input2) {
+  if (typeof input1 !== "object" || typeof input2 !== "object") return false;
+
+  const prop1 = JSON.stringify(input1);
+  const prop2 = JSON.stringify(input2);
+
+  return prop1 === prop2;
+}
+
+
+```
+### Question 5: 
+- `Write a function called complexCoercion that takes a single argument and checks if its type is primitive, and if so returns a coerced value according to the rules below 
+- coercion rules :
+    - if input is primive and:
+    - if input is a number, convert to string and then return a boolean.
+    - if input is a string, return a boolean.
+    - if input is null or undefined, return false.
+    - If input is not a primitive type, return the argument.`
+- solution : 
+``` javascript 
+const complexCoercion = (input) => {
+  const prim = ["string", "number", "bigint", "boolean", "symbol", "undefined"];
+
+  if (prim.indexOf(typeof input) < 0) {
+    console.log("Its not a primitive ");
+    return input;
+  } else {
+    if (typeof input === "number") {
+      return `${input}`;
+    } else if (typeof input === "string") return input;
+    else if (Number.isNaN(input) || typeof input === "undefined") return false;
+  }
+};
+
+
+```
