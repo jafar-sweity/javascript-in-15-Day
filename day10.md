@@ -5,6 +5,7 @@
 
 ## lesson summary 
 - **every thing in javascript is Object  ?** => ` False `
+  
 | Primitive Types in JavaScript |
 |------------------------------|
 | 1. Undefined                |
