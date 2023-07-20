@@ -1,3 +1,8 @@
+# Day 11 :
+## (Static Typing ,  Scope) 
+#### ---- ( deep-javascript-v3 ) ----
+
+
 ## lesson summary 
 ## Static Typing 
  -  Static Typing : Statically typed languages like Java, Go, and C++ are able to catch type-related errors at compile time
