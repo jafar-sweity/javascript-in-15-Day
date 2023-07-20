@@ -16,6 +16,7 @@
     - the are define an external standard for it '' non-js-standard''
     - using these tools requires a build process whic kind a raises the barrier to entry 
 
+
 ## Scope 
 - scope : where we look for thing 
 - in javascript we primarily have function , but we also now in ES6 have Blocks , those are units of scope 
@@ -25,7 +26,25 @@
   - This behavior is known as "implicit global variable declaration" and can lead to unexpected and hard-to-debug issues. It's generally considered bad practice because it can lead to unintended side effects and pollute the global namespace.
 
 
+## use strict : 
+- When strict mode is enabled, the following changes and restrictions come into effect:
+     - Variables must be declared with var, let, or const before they can be used. Implicit global variable declarations (discussed in the previous response) are not allowed.
 
+     - Assigning a value to an undeclared variable results in a reference error.
+
+     - Deleting variables, functions, or function arguments is not allowed.
+
+    - Function parameters must have unique names (prevents using duplicate parameter names).
+
+    - The this keyword behaves differently in functions. In strict mode, it won't default to the global object when a function is called without a context (e.g., myFunction()).
+
+    - The eval() function has a separate variable scope and cannot introduce new variables into the scope that called it.
+
+    - Octal numeric literals (starting with "0") are not allowed, leading zeroes for decimals are not allowed.
+
+    - Using with statements is not allowed.
+
+    - Using eval and arguments as variable names is disallowed.
 
 ### Question 2: 
 - `Write a function called checkNaN that takes a single argument and returns true if the argument is NaN and false otherwise.`
