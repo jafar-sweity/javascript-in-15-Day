@@ -41,13 +41,14 @@
 - **UMD (Universal Module Definition) is a module format that allows JavaScript modules to work seamlessly across different environments, including CommonJS, AMD (Asynchronous Module Definition), and global browser environments. It provides a way to write modules that are compatible with various module systems and can be used both in Node.js and in the browser.**
 ### Question 1: 
 - `Given the following code snippet and explain what's happening.`
+
   ```javscript
   for (var i = 0; i < 5; i++) {
     setTimeout(function() {
       console.log("value of [i] is: ", i);
     }, 100);
-}
-   ```
+  } 
+  ```
 - The current output is: "value of [i] is: 5" five times.
 
 - The output should be:
@@ -56,13 +57,13 @@
 
 - Without changing anything in the for loop's code itself, provide a solution to fix it.
 - solution : 
-``` javascript
+```javascript
  
  for (let i = 0; i < 5; i++) {
     setTimeout(function() {
       console.log("value of [i] is: ", i);
     }, 100);
-}
+  }
 
 ```
 - explaination : var keyword used in the loop does not have block scope but let have 
