@@ -41,7 +41,7 @@
 - **UMD (Universal Module Definition) is a module format that allows JavaScript modules to work seamlessly across different environments, including CommonJS, AMD (Asynchronous Module Definition), and global browser environments. It provides a way to write modules that are compatible with various module systems and can be used both in Node.js and in the browser.**
 ### Question 1: 
 - `Given the following code snippet and explain what's happening.`
- ```javscript
+ ```javascript
   for (var i = 0; i < 5; i++) {
     setTimeout(function() {
       console.log("value of [i] is: ", i);
