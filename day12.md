@@ -55,47 +55,15 @@ preservedGreet("Hello");
 ``` 
 
 ### QUESTION 3:
-` What will be the output of the following code snippet? Pick the right choice then justify your answer with an explanation.`
+` Consider the 2 following examples and distinguish the different output in each one with them with a reasoning.`
 ```javascript
-function testScope2() {
-  console.log(a);
-  console.log(b);
-  console.log(c);
-  if (true) {
-    var a = 1;
-    let b = 2;
-    const c = 3;
-  }
-}
+Example 1:
+Output: 10
+Reasoning for example 1's output: the inner function inner1 has access to the variables in the scope where it was defined
 
-testScope2();
+---
+Example 2:
+Output: 20
+Reasoning for example 2's output:it first looks for the variable x within its own scope and i was 20 
 ```
-- answer is c : 
-    
 
-
-### Question 4: 
-- ` What will be the output of the following code snippet? Pick the right choice then justify your answer with an explanation.`
-```javascript
-function testScope3() {
-  var a = 36;
-  let b = 100;
-  const c = 45;
-
-  console.log([a, b, c]);
-
-  if (true) {
-    var a = 1;
-    let b = 2;
-    const c = 3;
-
-    console.log([a, b, c]);
-  }
-
-  console.log([a, b, c]);
-}
-
-testScope3();
- ``` 
- - answer is c :
-    - After the if block: The var declaration inside the if block affects the outer variable a, changing its value to 1. The let and const declarations inside the if block do not affect the outer variables b and c.
