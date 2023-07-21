@@ -70,7 +70,7 @@
 ### Question 2: 
 - `Given the following code snippet and explain what's happening..`
 
- ```javscript
+ ```javascript
 for (let i = 0; i < 5; i++) {
    let array = [];
    array.push(i);
@@ -87,7 +87,7 @@ for (let i = 0; i < 5; i++) {
 - Provide a solution to fix it.
 - solution : 
 
- ```javscript
+ ```javascript
 for (let i = 0; i < 5; i++) {
    let array = [];
    array.push(i);
