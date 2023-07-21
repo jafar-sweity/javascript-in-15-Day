@@ -41,13 +41,14 @@
 - **UMD (Universal Module Definition) is a module format that allows JavaScript modules to work seamlessly across different environments, including CommonJS, AMD (Asynchronous Module Definition), and global browser environments. It provides a way to write modules that are compatible with various module systems and can be used both in Node.js and in the browser.**
 ### Question 1: 
 - `Given the following code snippet and explain what's happening.`
- ```javascript
+
+  ```javscript
   for (var i = 0; i < 5; i++) {
     setTimeout(function() {
       console.log("value of [i] is: ", i);
     }, 100);
-  }
-```
+  } 
+  ```
 - The current output is: "value of [i] is: 5" five times.
 
 - The output should be:
@@ -67,10 +68,31 @@
 ```
 - explaination : var keyword used in the loop does not have block scope but let have 
 ### Question 2: 
-- ``
+- `Given the following code snippet and explain what's happening..`
+
+ ```javscript
+for (let i = 0; i < 5; i++) {
+   let array = [];
+   array.push(i);
+   console.log("Current array is: ", array)
+}
+```
+- The current output is: "value of [i] is: 5" five times.
+
+- The output should be:
+
+ - "Current array is: [ 0 ]" "Current array is: [ 1 ]" "Current array is: [ 2 ]" "Current array is: [ 3 ]" "Current array is: [ 4 ]".
+
+- The output should be: "Current array is: [0, 1, 2, 3, 4]".
+- Provide a solution to fix it.
 - solution : 
-``` javascript 
--
+
+ ```javscript
+for (let i = 0; i < 5; i++) {
+   let array = [];
+   array.push(i);
+}
+   console.log("Current array is: ", array)
 
 ```
 
