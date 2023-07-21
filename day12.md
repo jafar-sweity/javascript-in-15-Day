@@ -1,4 +1,4 @@
-# Day 11 :
+# Day 12 :
 ## (Scope & Function Expressions , Advanced Scope - first 40 mins) 
 #### ---- ( deep-javascript-v3 ) ----
 
