@@ -25,33 +25,34 @@
 
 
 ### Question 2: 
-- `Write a function called checkNaN that takes a single argument and returns true if the argument is NaN and false otherwise.`
+- `-`
 - solution : 
 ``` javascript 
 -
 
 ```
 ### Question 2: 
-- `What will be the output of the following code snippet? Pick the right choice then justify your answer with an explanation.`
+- `Build a function called preserveThis that takes a function as input and returns a new arrow function that behaves the same way as the input function but preserves the original this context when used as a method of an object.`
 - solution : 
 ``` javascript 
-function testScope1() {
-  if (true) {
-    var a = 1;
-    let b = 2;
-    const c = 3;
-  }
-  console.log(a);
-  console.log(b);
-  console.log(c);
-}
+// Example object
+const obj = {
+  name: "John",
+  greet: function (greeting) {
+    console.log(`${greeting}, ${this.name}!`);
+  },
+};
 
-testScope1();
+const preserveThis = (func) => {
+  return (...arg) => func.apply(obj, arg);
+};
+
+const preservedGreet = preserveThis(obj.greet);
+
+
+preservedGreet("Hello");
+
 ``` 
-- output : (c) =>  1, ReferenceError, ReferenceError 
-- explanation : 
-  - var :accessible throughout the whole function ( function-scoped)
-  - let and const : they are only accessible within the block they are defined in (declarations are block-scoped)
 
 ### QUESTION 3:
 ` What will be the output of the following code snippet? Pick the right choice then justify your answer with an explanation.`
