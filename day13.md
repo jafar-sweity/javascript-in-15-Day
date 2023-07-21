@@ -88,8 +88,9 @@ for (let i = 0; i < 5; i++) {
 - solution : 
 
  ```javascript
+  let array = [];
 for (let i = 0; i < 5; i++) {
-   let array = [];
+ 
    array.push(i);
 }
    console.log("Current array is: ", array)
