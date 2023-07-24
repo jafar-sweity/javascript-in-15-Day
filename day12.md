@@ -25,7 +25,7 @@
 
 
 ### Question 2: 
-- ``Create a function called arrowHOF that takes an arrow function as input and returns a new arrow function that enhances the behavior of the input function The enhanced function should accept additional arguments and execute the input function multiple times based on these arguments`
+- `Create a function called arrowHOF that takes an arrow function as input and returns a new arrow function that enhances the behavior of the input function The enhanced function should accept additional arguments and execute the input function multiple times based on these arguments`
 - solution : 
 ``` javascript 
 const arrowHOF = (normalFunc) => {
