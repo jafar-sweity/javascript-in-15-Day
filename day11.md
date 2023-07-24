@@ -37,10 +37,63 @@
     - Octal numeric literals (starting with "0") are not allowed, leading zeroes for decimals are not allowed.
     - Using with statements is not allowed.
     - Using eval and arguments as variable names is disallowed.
-### Question 2: 
-- `Write a function called checkNaN that takes a single argument and returns true if the argument is NaN and false otherwise.`
+### Question 1: 
+- `QUESTION #1
+Given the following promisesArray, convert the array into an object using the convertToObj function.
+You should apply typescript types to every promise, the input of convertToObj, and the output of convertToObj. Build interfaces and types as needed.`
 - solution : 
-``` javascript 
+``` javascript
+type checkBooleanType = (boolean: boolean) => Promise<boolean | string>;
+type typesayHelloWorld = Promise<string>;
+type typereturnObj = Promise<{
+  x: string;
+  y: number;
+}>;
+interface toObject {
+  sayHelloWorld: typesayHelloWorld;
+  checkBoolean: checkBooleanType;
+  returnObj: typereturnObj;
+}
+interface obj {
+  [key: string | number]: typesayHelloWorld | checkBooleanType | typereturnObj;
+}
+
+const sayHelloWorld: typesayHelloWorld = new Promise((resolve, reject) => {
+  resolve("Hello world!");
+});
+
+const checkBoolean: checkBooleanType = (boolean: boolean) =>
+  new Promise((resolve, reject) => {
+    if (boolean) {
+      resolve(boolean);
+    } else {
+      reject(`Input is false :(`);
+    }
+  });
+
+const returnObj: typereturnObj = new Promise((resolve, reject) => {
+  resolve({
+    x: "meow",
+    y: 45,
+  });
+});
+
+const promisesArray: [typesayHelloWorld, checkBooleanType, typereturnObj] = [
+  sayHelloWorld,
+  checkBoolean,
+  returnObj,
+];
+
+const convertToObj = (
+  array: [typesayHelloWorld, checkBooleanType, typereturnObj]
+): obj => {
+  const object: obj = {};
+  for (let i = 0; i < array.length; i++) {
+    object[i] = array[i];
+  }
+
+  return object;
+};
 -
 ```
 ### Question 2: 
