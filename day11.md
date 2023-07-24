@@ -131,7 +131,12 @@ function testScope2() {
 }
 testScope2();
 ```
-- answer is c : 
+- answer is c :
+  - undefined
+  -ReferenceError: b is not defined
+  - ReferenceError: c is not defined
+explanation :`the variables a and b are in scope, but a is declared using var and is hoisted, while b and c are declared using let and const, respectively, and are block-scoped. However, neither b nor c are accessible outside the if block, causing the ReferenceError when attempting to log them.`
+
     
 ### Question 4: 
 - ` What will be the output of the following code snippet? Pick the right choice then justify your answer with an explanation.`
