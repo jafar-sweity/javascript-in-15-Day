@@ -97,11 +97,46 @@ for (let i = 0; i < 5; i++) {
 
 ```
 
-
+## CLOSURE :
 ### Question 1: 
-- ``
+- `Create a function called privateCounter() that behaves like a private counter. The function should not have any public variables, and the count should only be accessible through a closure. It should have two methods: increment() and getCount(). The increment() method should increment the count, and getCount() should return the current count.`
 - solution : 
 ``` javascript 
--
+function privateCounter() {
+  let cou = 0; 
+  function increment() {
+    cou++;
+  }
+
+  function getCount() {
+    return cou;
+  }
+
+  return {
+    increment: increment,
+    getCount: getCount,
+  };
+}
+
+```
+### Question 2: 
+- `Write a JavaScript function called generateFibonacci(count) that returns a closure. The closure should generate the next number in the Fibonacci sequence each time it is called. The generateFibonacci function should take a parameter count that determines how many times the closure will generate the next number, and it should use recursion for this purpose.`
+- solution : 
+``` javascript 
+function privateCounter() {
+  let cou = 0; 
+  function increment() {
+    cou++;
+  }
+
+  function getCount() {
+    return cou;
+  }
+
+  return {
+    increment: increment,
+    getCount: getCount,
+  };
+}
 
 ```
