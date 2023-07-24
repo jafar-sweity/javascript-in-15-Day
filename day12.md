@@ -25,10 +25,20 @@
 
 
 ### Question 2: 
-- `-`
+- ``Create a function called arrowHOF that takes an arrow function as input and returns a new arrow function that enhances the behavior of the input function The enhanced function should accept additional arguments and execute the input function multiple times based on these arguments`
 - solution : 
 ``` javascript 
--
+const arrowHOF = (normalFunc) => {
+  return (...args) => {
+    return (multiplier) => {
+      const result = normalFunc(...args);
+      for (let i = 0; i < multiplier; i++) {
+        console.log(result);
+      }
+    };
+  };
+};
+
 
 ```
 ### Question 2: 
